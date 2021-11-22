@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Rock Paper Scissor</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+</head>
+<body>
+    <header>
+        <div class="title-container wrap">
+            <div class="game-title">
+                <h1>ROCK PAPER SCISSOR</h1>
+            </div>
+            <div class="score-board">
+                <div class="player-score">
+                    <p class="score-name player-color">Player</p>
+                    <p id="playerScore" class="score-count">0</p>
+                </div>
+                <div class="computer-score">
+                    <p class="score-name computer-color">Computer</p>
+                    <p id="computerScore" class="score-count">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="selection-container wrap">
+            <div class="selection-title">
+                <h2>Make your choice</h2>
+            </div>
+            <div class="select-hand">
+                <ul>
+                    <li><i id="rock" class="fas fa-hand-rock"></i></li>
+                    <li><i id="paper" class="fas fa-hand-paper"></i></li>
+                    <li><i id="scissor" class="fas fa-hand-scissors"></i></li>
+                </ul>
+            </div>
+        </div>
+        <!-- battle -->
+        <div class="fight-container">
+            <div class="container">
+                <div id="close" class="close-btn">
+                    <i class="far fa-times-circle"></i>
+                </div>
+                <div class="indicator">
+                    <h3 id="win-indicator">Its a Draw</h3>
+                </div>
+                <div class="player-computer-choice">
+                    <div class="player-choice">
+                        <p>Player</p>
+                        <p  id="player-choice"><i class="rotate fas fa-hand-rock"></i></p>
+                    </div>
+                    <div class="computer-choice">
+                        <p>Computer</p>
+                        <p  id="computer-choice"><i class="flipRock fas fa-hand-rock"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <script src="./app.js"></script>
+</body>
+</html>

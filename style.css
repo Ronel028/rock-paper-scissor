@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+
+:root{
+    --background-color: #17D7A0;
+    --font-color: #6166B3;
+
+    /* font weight */
+    --regular: 400;
+    --semi-bold: 600;
+    --bold: 700;
+}
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+}
+ul{
+    list-style-type: none;
+}
+.wrap{
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.player-color{
+    color: #113CFC;
+}
+.computer-color{
+    color: #B91646;
+}
+/* Start design */
+
+header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+header .title-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Game Title */
+.title-container .game-title{
+    margin: 30px 0px 68px;
+}
+.title-container .game-title h1{
+    font-size: 50px;
+    font-weight: var(--bold);
+    color: var(--font-color);
+}
+/* Score Board */
+.title-container .score-board{
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-container .score-board .player-score,.computer-score{
+    width: 100px;
+    height: 111px;
+    padding: 7px;
+    background-color: #32C1CD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px -1px #000;
+}
+.title-container .score-board p.score-name{
+    font-size: 17px;
+    font-weight: var(--semi-bold);
+}
+.title-container .score-board p.score-count{
+    font-size: 40px;
+    font-weight: var(--regular);
+}
+
+/* -------------------------------------------- */
+
+.selection-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.selection-container .selection-title{
+    margin: 74px 0px 37px;
+}
+.selection-container .selection-title h2{
+    font-size: 31px;
+    font-weight: var(--semi-bold);
+} 
+
+/* hand select */
+.selection-container .select-hand{
+    width: 80%;
+}
+.selection-container .select-hand ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.selection-container .select-hand ul li{
+    width: 151px;
+    height: 151px;
+    padding: 18px;
+    border: 2px solid #000;
+    border-radius: 41px;
+    cursor: pointer;
+
+    transition: transform 0.2s ease-in;
+}
+.selection-container .select-hand ul li i{
+    font-size: 116px;
+}
+.selection-container .select-hand ul li:hover{
+    transform: scale(1.1);
+}
+
+
+/* ---------------------------------------------------- */
+.fight-container{
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 3px 35px 0px #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.fight-container .container{
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fight-container .container .close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.fight-container .container .close-btn .far{
+    font-size: 25px;
+}
+.fight-container .indicator{
+    margin-bottom: 50px;
+}
+
+.fight-container .indicator h3{
+   font-size: 35px;
+}
+
+/* player and computer choice */
+.fight-container .player-computer-choice{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fight-container .player-computer-choice .player-choice,.computer-choice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fight-container .player-computer-choice p{
+    font-size: 29px;
+    margin-bottom: 21px;
+}
+.fight-container .player-computer-choice i{
+    font-size: 81px;
+}
+
+/* class */
+.color-win{
+    color: green;
+}
+.color-lost{
+    color: red;
+}
+.color-draw{
+    color: blue;
+}
+.scale{
+    transform: scaleX(-1);
+}
+.rotate{
+    transform: rotate(90deg);
+}
+.flipRock{
+    transform: rotate(90deg) scaleY(-1);
+}
+
+/* Responsive */
+@media screen and (max-width: 700px){
+    .title-container .game-title{
+        text-align: center;
+    }
+    .title-container .game-title h1{
+        font-size: 30px;
+    }
+    .selection-container .select-hand{
+        width: 90%;
+    }
+    .selection-container .select-hand ul{
+        justify-content: space-between;
+    }
+    .selection-container .select-hand ul li{
+        width: 100px;
+        height: 100px;
+    }
+    .selection-container .select-hand ul li i{
+        font-size: 60px;
+    }
+}
+@media screen and (max-width: 482px){
+    /* Score Board */
+    .title-container .score-board{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 382px){
+    .selection-container .selection-title{
+        text-align: center;
+    }
+    .selection-container .selection-title h2{
+        font-size: 22px;
+    }
+    .selection-container .select-hand ul li{
+        width: 87px;
+        height: 84px;
+    }
+    .selection-container .select-hand ul li i{
+        font-size: 43px;
+    }
+}
+@media screen and (max-width: 810px){
+     header{
+         height: 100%;
+         margin-top: 20%;
+     }
+     .fight-container{
+        top: 100%;
+    }
+}
+
+/* fight container */
+@media screen and (max-width: 900px){
+    .fight-container{
+        height: 300px;
+        width: 80%;
+        
+    }
+}
+@media screen and (max-width: 570px){
+    .fight-container{
+        top: 100%;
+    }
+    .fight-container .container .indicator h3{
+        font-size: 20px;
+    }
+    .fight-container .container .player-computer-choice .player-choice p{
+        font-size: 20px;
+    }
+    .fight-container .container .player-computer-choice .computer-choice p{
+        font-size: 20px;
+    }
+    .fight-container .container .player-computer-choice .computer-choice p i{
+        font-size: 55px;
+    }
+    .fight-container .container .player-computer-choice .player-choice p i{
+        font-size: 55px;
+    }
+}
+@media screen and (max-width: 351px){
+    .fight-container{
+        top: 100%;
+        height: 200px;
+    }
+    .fight-container .container .indicator h3{
+        font-size: 20px;
+    }
+    .fight-container .container .player-computer-choice .player-choice p{
+        font-size: 15px;
+    }
+    .fight-container .container .player-computer-choice .computer-choice p{
+        font-size: 15px;
+    }
+    .fight-container .container .player-computer-choice .computer-choice p i{
+        font-size: 46px;
+    }
+    .fight-container .container .player-computer-choice .player-choice p i{
+        font-size: 46px;
+    }
+}
